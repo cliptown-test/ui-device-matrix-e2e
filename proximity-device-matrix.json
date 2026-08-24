@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "protocol": "cliptown.proximity.v1",
+  "hostedRadioEvidence": false,
+  "platforms": {
+    "android": {
+      "flutter": ["central", "peripheral"],
+      "rust": [],
+      "permissionSurfaces": ["scan", "connect", "advertise", "radio-off", "revocation"]
+    },
+    "ios": {
+      "flutter": ["central", "peripheral"],
+      "rust": [],
+      "permissionSurfaces": ["usage-description", "radio-off", "revocation", "background"]
+    },
+    "windows": {
+      "flutter": ["central", "peripheral"],
+      "rust": ["central"],
+      "permissionSurfaces": ["bluetooth-capability", "radio-off", "revocation"]
+    },
+    "macos": {
+      "flutter": ["central", "peripheral"],
+      "rust": ["central"],
+      "permissionSurfaces": ["usage-description", "bluetooth-entitlement", "radio-off", "revocation"]
+    },
+    "linux": {
+      "flutter": ["central"],
+      "rust": ["central"],
+      "permissionSurfaces": ["bluez-dbus", "radio-off", "revocation"]
+    }
+  },
+  "requiredPhysicalPairs": [
+    ["android", "android"],
+    ["ios", "ios"],
+    ["android", "ios"],
+    ["android", "windows"],
+    ["android", "macos"],
+    ["android", "linux"],
+    ["ios", "windows"],
+    ["ios", "macos"],
+    ["ios", "linux"]
+  ],
+  "requiredCanaries": [
+    "explicit-foreground-start",
+    "matching-transcript-code",
+    "bilateral-pairing-consent",
+    "per-offer-import-consent",
+    "permission-denied",
+    "permission-revoked",
+    "radio-off",
+    "wrong-code",
+    "one-sided-consent",
+    "wrong-recipient",
+    "replay",
+    "reorder",
+    "expiry",
+    "oversize",
+    "digest-mismatch",
+    "signature-mismatch",
+    "background-teardown",
+    "disconnect-reconnect"
+  ]
+}
